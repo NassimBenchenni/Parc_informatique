@@ -13,7 +13,7 @@ def generer_graphique():
 
         if not hosts:
             print(f"Pas encore assez de données pour faire le graphique {data}.")
-            continue
+            continue    
 
         g = pygal.Line(title=f"Évolution : {data}", x_label_rotation=20)
         
