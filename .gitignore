@@ -3,15 +3,11 @@
 .env
 
 # Bases de données
-*.db
-data.db
+serveur/*.db
+serveur/data.db
 
 # Fichiers de logs
-*.log
+serveur/*.log
 
 # Fichiers générés (Graphiques SVG)
-nassim/serveur/static/*.svg
-
-# Cache Python
-__pycache__/
-*.pyc
+serveur/static/*.svg
