@@ -2,8 +2,11 @@ import smtplib
 from email.mime.text import MIMEText
 import sys
 import os
+from dotenv import load_dotenv
 
-# Récupération sécurisée des identifiants depuis l'environnement
+# 1. On force Python à lire le fichier .env
+load_dotenv()
+
 EMAIL_ADDRESS = os.environ.get("GMAIL_EMAIL")
 EMAIL_PASSWORD = os.environ.get("GMAIL_PASS")
 

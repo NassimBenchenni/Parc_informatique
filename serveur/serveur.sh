@@ -1,7 +1,6 @@
 #!/bin/bash
 cd /home/nassim/nassim/serveur/ || exit
 
-
 DB_FILE="data.db"
 
 # Création des tables
@@ -12,6 +11,7 @@ MACHINES=("192.168.56.10" "192.168.56.11" "192.168.56.12")
 UTILISATEUR="nassim"
 
 python3 cert_parser.py
+
 
 
 for ip in "${MACHINES[@]}"; do
