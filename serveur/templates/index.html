@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Monitoring</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
+    <h1>Monitoring Centralisé</h1>
+
+    <div style="background-color: #ffcccc; padding: 15px; border-left: 5px solid red; margin-bottom: 20px;">
+        <h3>Dernière Alerte CERT :</h3>
+        <p><strong>{{ alerte }}</strong></p>
+    </div>
+
+    <h2>Historique des données (Table unique)</h2>
+    <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 900px;">
+        <tr style="background-color: #f2f2f2;">
+            <th>Clé (ID)</th>
+            <th>Date</th>
+            <th>Quoi</th>
+            <th>Host</th>
+            <th>Valeur (Val)</th>
+        </tr>
+        {% for ligne in historique %}
+        <tr>
+            <td style="color: gray;">{{ ligne[0] }}</td>
+            <td>{{ ligne[2] }}</td>
+            <td style="color: blue; font-weight: bold;">{{ ligne[4] }}</td>
+            <td><strong>{{ ligne[5] }}</strong></td>
+            <td style="color: red;">{{ ligne[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Évolution du Système (Parc entier)</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        
+        <div style="flex: 1; min-width: 45%;">
+            <h3>Charge CPU (%)</h3>
+            <embed type="image/svg+xml" src="{{ url_for('static', filename='graph_CPU.svg') }}" style="width: 100%; border: 1px solid #ccc;" />
+        </div>
+
+        <div style="flex: 1; min-width: 45%;">
+            <h3>Utilisation RAM (%)</h3>
+            <embed type="image/svg+xml" src="{{ url_for('static', filename='graph_RAM.svg') }}" style="width: 100%; border: 1px solid #ccc;" />
+        </div>
+
+        <div style="flex: 1; min-width: 45%;">
+            <h3>Occupation Disque (%)</h3>
+            <embed type="image/svg+xml" src="{{ url_for('static', filename='graph_DISQUE.svg') }}" style="width: 100%; border: 1px solid #ccc;" />
+        </div>
+
+        <div style="flex: 1; min-width: 45%;">
+            <h3>Nombre de Processus</h3>
+            <embed type="image/svg+xml" src="{{ url_for('static', filename='graph_PROCESSUS.svg') }}" style="width: 100%; border: 1px solid #ccc;" />
+        </div>
+
+    </div>
+
+</body>
+</html>

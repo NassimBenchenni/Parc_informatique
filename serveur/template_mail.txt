@@ -1,0 +1,9 @@
+Bonjour Administrateur,
+
+Un problème a étét décecté sur une machine
+Machine concernée : __MACHINE__
+
+Détails du problème :
+__MESSAGE__
+
+Message automatique du serveur.

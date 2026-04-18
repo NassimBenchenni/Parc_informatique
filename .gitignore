@@ -1,0 +1,17 @@
+*.pdf
+
+.env
+
+# Bases de données
+*.db
+data.db
+
+# Fichiers de logs
+*.log
+
+# Fichiers générés (Graphiques SVG)
+nassim/serveur/static/*.svg
+
+# Cache Python
+__pycache__/
+*.pyc
